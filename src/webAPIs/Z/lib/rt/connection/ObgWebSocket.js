@@ -35,4 +35,7 @@ export default class ObgWebSocket extends AbstractConnection{
     this.ws.close(code, reason)
     return this
   }
+  isConnected () {
+    return this.ws.readyState === 1
+  }
 }
