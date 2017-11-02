@@ -1,0 +1,9 @@
+callback ConnectCallback = void ();
+callback DisconnectCallback = void ();
+callback ErrorCallback = void (VISError error);
+callback AuthorizeCallback = void (unsigned long TTL);
+callback GetVSSCallback = void (VSS vss);
+callback GetCallback = void (VISValue value);
+callback SetCallback = void ();
+callback SubscriptionCallback = void (VISValue value);
+callback UnsubscribeCallback = void ();

@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "outDir": "./src_",
+    "allowJs": true,
+    "module": "commonjs",
+    "sourceMap":true,
+    "removeComments": true
+  },
+  "include": [
+      "./src/**/*"
+  ]
+}
