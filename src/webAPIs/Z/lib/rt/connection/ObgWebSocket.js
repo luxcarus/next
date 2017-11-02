@@ -2,41 +2,37 @@ import AbstractConnection from './AbstractConnection'
 export default class ObgWebSocket extends AbstractConnection{
   constructor() {
     super()
-    this.ws = null
-    this.port = null
+    /*WebSocket*/ this.ws = null
   }
-  connect(path) {
+  /*ObgWebSocket*/ connect(path) {
     if (this.protocol === null) throw new Error('Protocol is required.')
     if (this.host === null) throw new Error('Host is required.')
     if (this.port === null) throw new Error('Port is required.')
     this.ws = new WebSocket(`${this.protocol}://${this.host}:${this.port}`)
     return this
   }
-  onopen(fn){
-    console.log('onopen() is called')
+  /*ObgWebSocket*/ onOpen(/*Function*/ fn){
     this.ws.onopen = fn
     return this
   }
-  onmessage(fn){
-    console.log('onmessage() is called')
+  /*ObgWebSocket*/ onMessage(/*Function*/ fn){
     this.ws.onmessage = fn
     return this
   }
-  onerror(fn){
-    console.warn('onerror() is called')
+  /*ObgWebSocket*/ onError(/*Function*/ fn){
     this.ws.onerror = fn
     return this
   }
-  onclose(fn){
-    console.warn('onclose() is called')
+  /*ObgWebSocket*/ onClose(/*Function*/ fn){
     this.ws.onclose = fn
     return this
   }
-  send (/*Any*/data) {
+  /*ObgWebSocket*/ send (/*String*/ data) {
     this.ws.send(data)
+    return this
   }
-  close(data){
-    this.ws.onclose(data)
+  /*ObgWebSocket*/ close(/*Number*/ code, /*String*/ reason){
+    this.ws.close(code, reason)
+    return this
   }
-
 }
