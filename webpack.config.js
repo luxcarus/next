@@ -1,6 +1,6 @@
 var webpack = require("webpack")
 var path = require("path")
-var SRC = path.resolve(__dirname, 'src') 
+var SRC = path.resolve(__dirname, 'src')
 module.exports = {
   entry: SRC + "/main.js",
   output: {
